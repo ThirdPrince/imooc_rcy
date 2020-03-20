@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item android:id="@+id/add"
+        android:orderInCategory="100"
+        android:title="添加"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_menu_add"
+        />
+
+    <item android:id="@+id/remove"
+        android:orderInCategory="100"
+        android:title="删除"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_menu_delete"
+        />
+    <item android:id="@+id/action_list_view"
+        android:orderInCategory="100"
+        android:title="ListView"
+        app:showAsAction="never"
+        />
+
+    <item android:id="@+id/action_grid_view"
+        android:orderInCategory="100"
+        android:title="GridView"
+        app:showAsAction="never"
+        />
+
+
+    <item android:id="@+id/action_hor_grid_view"
+        android:orderInCategory="100"
+        android:title="HorGridView"
+        app:showAsAction="never"
+        />
+
+    <item android:id="@+id/action_stagger_view"
+        android:orderInCategory="100"
+        android:title="StaggerdView"
+        app:showAsAction="never"
+        />
+
+    <item android:id="@+id/nest_rcy_view"
+        android:orderInCategory="100"
+        android:title="nest rcy"
+        app:showAsAction="never"
+        />
+</menu>
