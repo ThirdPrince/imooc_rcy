@@ -66,6 +66,7 @@ class RcyAdapter extends RecyclerView.Adapter<RcyAdapter.MyViewHolder> {
             int lastSeenFirstPosition = listPosition.get(position, 0);
             if (lastSeenFirstPosition >= 0 &&   holder.linearLayoutManager != null ) {
                 holder.linearLayoutManager.scrollToPositionWithOffset(lastSeenFirstPosition, 0);
+
             }
         }
     }
@@ -84,9 +85,12 @@ class RcyAdapter extends RecyclerView.Adapter<RcyAdapter.MyViewHolder> {
     public void onViewRecycled(@NonNull MyViewHolder holder) {
 
         final int position = holder.getAdapterPosition();
+
         if(getItemViewType(position)==1)
         {
             int firstVisiblePosition = holder.linearLayoutManager.findFirstVisibleItemPosition();
+            int lastVisiblePosition = holder.linearLayoutManager.findLastVisibleItemPosition();
+            Log.e(TAG," firstVisiblePosition::"+firstVisiblePosition+":lastVisiblePosition"+lastVisiblePosition);
             listPosition.put(position, firstVisiblePosition);
         }
 

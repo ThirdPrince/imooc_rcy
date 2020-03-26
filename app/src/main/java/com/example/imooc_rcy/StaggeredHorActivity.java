@@ -37,7 +37,7 @@ public class StaggeredHorActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.rcy_view);
         simpleAdapter = new SimpleHorListAdapter(this,mDatas);
-        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(5,StaggeredGridLayoutManager.HORIZONTAL));
+        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.HORIZONTAL));
         recyclerView.setAdapter(simpleAdapter);
     }
 }

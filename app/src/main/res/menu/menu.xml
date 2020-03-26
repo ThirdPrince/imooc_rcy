@@ -46,4 +46,9 @@
         android:title="nest rcy"
         app:showAsAction="never"
         />
+    <item android:id="@+id/muti_rcy_view"
+        android:orderInCategory="100"
+        android:title="muti rcy"
+        app:showAsAction="never"
+        />
 </menu>

@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,6 +22,8 @@ import java.util.List;
  * Imocc Rcy
  */
 public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = "MainActivity";
 
     private RecyclerView recyclerView ;
 
@@ -35,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         initView();
         simpleAdapter = new SimpleAdapter(this,mDatas);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setHasFixedSize(true);
        // recyclerView.setLayoutManager(new StaggeredGridLayoutManager(5,StaggeredGridLayoutManager.HORIZONTAL));
         //recyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
         recyclerView.setAdapter(simpleAdapter);
@@ -74,7 +78,20 @@ public class MainActivity extends AppCompatActivity {
                // recyclerView.setAdapter(simpleAdapter);
                 break;
             case R.id.action_grid_view:
-                recyclerView.setLayoutManager(new GridLayoutManager(this,3));
+                GridLayoutManager gridLayoutManager = new GridLayoutManager(this,12);
+                gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+                    @Override
+                    public int getSpanSize(int position) {
+                        //Log.e(TAG,"position:"+position%2);
+                        if (position < 7 || position > 14) {
+                            return 3;
+                        }
+                        return 4;
+
+                        //return position%2;
+                    }
+                });
+                recyclerView.setLayoutManager(gridLayoutManager);
                // recyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
                // recyclerView.setAdapter(simpleAdapter);
 
@@ -100,6 +117,9 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.nest_rcy_view:
                 startActivity(new Intent(MainActivity.this,RcyActivity.class));
+                break;
+            case R.id.muti_rcy_view:
+                startActivity(new Intent(MainActivity.this,MutiTypeActivity.class));
                 break;
         }
        // recyclerView.setAdapter(simpleAdapter);

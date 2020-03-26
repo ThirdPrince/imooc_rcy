@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="72dp"
     android:background="#44ff0000"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_margin="3dp"
     tools:context=".MainActivity">
 
    <TextView
        android:id="@+id/tv"
        android:layout_width="72dp"
-       android:layout_height="match_parent"
+       android:layout_height="wrap_content"
        android:gravity="center"
        />
 
